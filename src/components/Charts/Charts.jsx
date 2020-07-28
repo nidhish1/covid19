@@ -32,6 +32,27 @@ const Charts = ( {data : {confirmed,recovered,deaths} , country}) => {
                     fill:true,
                 }]
             }}
+            options={{
+                scales: {
+                    xAxes: [{
+                        type: 'time',
+                        time: {
+                            unit: 'month'
+                        },
+                        ticks: {
+                           
+                            maxTicksLimit: 5
+                        }
+                    }],yAxes: [{
+                        
+                        ticks: {
+                           
+                            maxTicksLimit: 5,
+                            display:false
+                        }
+                    }]
+                }
+              }}
         />) : null 
     ); 
     const barChart = (
@@ -51,7 +72,7 @@ const Charts = ( {data : {confirmed,recovered,deaths} , country}) => {
 
                 options ={{
                     legend: {display:false},
-                    title: {display:true, text: {country}}
+                    title: {display:true, text: country}
                 }}
             />
         ) : null
